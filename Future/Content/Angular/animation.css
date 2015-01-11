@@ -1,0 +1,26 @@
+﻿.repeater.ng-enter {
+    transition:0.75s;
+    opacity:0;
+}
+
+.repeater.ng-enter-stagger {
+    transition-delay:0.1s;
+}
+
+.repeater.ng-enter-active {
+    opacity:1;
+}
+
+.repeater.ng-leave {
+    _transition:0.75s;
+    opacity:1;
+}
+
+.repeater.ng-leave-stagger {
+    _transition-delay:0.01s;
+}
+
+.repeater.ng-leave-active {
+    opacity:0;
+}
+

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="restaurantApp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-ui-1.10.3.js"></script>
+    <script src="Scripts/jquery.cookie.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-sanitize.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.css.map" />
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap-theme.css.map"" />
+    <link rel="stylesheet" type="text/css" href="Content/Angular/animation.css" />
+                        
+                        
+                        
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+</head>
+<body class="container">
+    <header>
+        asdasdasdasdasdasdasd
+    </header>
+    <div id="body">
+        <div class="content-wrapper col-md-3">
+            <nav>
+                <ul class="nav nav-pills" data-ng-controller="navigationCtrl as navCtrl">
+                    <li class="col-md-12" data-ng-class="{active:navCtrl.isSet(1)}" data-ng-click="navCtrl.setTab(1)"><a href="#/">Profile</a></li>
+                    <li class="col-md-12" data-ng-class="{active:navCtrl.isSet(2)}" data-ng-click="navCtrl.setTab(2)"><a href="#/topCompanies">Dream Companies</a></li>
+                    <li class="col-md-12" data-ng-class="{active:navCtrl.isSet(3)}" data-ng-click="navCtrl.setTab(3)"><a href="#/angualrExamples">Examples</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-9">
+            <div data-ng-view=""></div>
+        </div>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy;.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<form role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+
+<p>
+    <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button>
+</p>
+<input type="text" value="Click me!" popover="I appeared on focus! Click away and I'll vanish..." popover-trigger="focus" class="form-control">
+
+<hr />
+<div ng-controller="AlertDemoCtrl">
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+<hr />
+
+{{textToShow}}
+<hr />
+<ul>
+    <li data-ng-repeat="name in nameList">{{name}}</li>
+</ul>
+<form data-ng-submit="addName()">
+    Name:<input type="text" data-ng-model="nameToAdd" />
+    <br />
+    <input type="submit" value="Add Name to nameList" />
+</form>
+<hr />
+Search:<input type="text" data-ng-model="searchQuery" />
+<button data-ng-click="sortOrder = 'firstName'">Sort by first name</button>
+<button data-ng-click="sortOrder = 'lastName'">Sort by first name</button>
+<ul>
+    <li data-ng-repeat="name in UserList | filter:searchQuery | orderBy: sortOrder">{{name.firstName}} {{name.lastName}}</li>
+</ul>
+<form data-ng-submit="addUser()">
+    First Name:<input type="text" data-ng-model="userFirstName" />
+    <br />
+    Last Name:<input type="text" data-ng-model="userLastName" />
+    <br />
+    <input type="submit" value="Add Name to nameList" />
+</form>
+<hr />
+<button ng-click="addItems()">add</button>
+<button ng-click="clearItems()">clear</button>
+<hr />
+<button class="repeater" ng-repeat="item in items" ng-click="removeItem($index)">
+    {{item.title}}
+</button>

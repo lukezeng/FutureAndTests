@@ -1,0 +1,57 @@
+﻿<div from="Luke" greet="audiances"></div>
+<h3>My Dream Companies</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">One More Dream<small> You help me.</small></h2>
+    </div>
+    <div class="panel-body">
+        <form role="form" name="dreamCompanyForm" novalidate>            
+            <div class="col-md-6 form-group">
+                <label for="exampleInputEmail1">Company name</label>
+                <input class="form-control" name="exampleName" type="text" popover="I may meet you here!" popover-trigger="focus" ng-model="example.Name" required /><br />
+                <span class="text-danger" ng-show="dreamCompanyForm.exampleName.$error.required&&dreamCompanyForm.exampleName.$dirty">Tell me your example.</span>
+            </div>
+            <div class="col-md-6 form-group clearfix">
+                <div class="input-group input-group-sm col-md-6">
+                    <span class="input-group-addon">Company Rating</span>
+                    <input name="exampleRating" type="text" popover="" popover-trigger="focus" ng-model="example.Rating" required /><br />
+                </div>
+                <span class="text-danger" ng-show="dreamCompanyForm.exampleRating.$error.required&&dreamCompanyForm.exampleRating.$dirty">Tell me something about the example.</span>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <button type="button" class="btn btn-default" popover="I appeared on mouse enter!" popover-trigger="mouseenter" ng-disabled="dreamCompanyForm.$invalid" ng-click="Save(example);dreamCompanyForm.$setPristine()">Save Dream Company</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="clearfix">
+    <div style="margin: 0 auto;" class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span>Search</span>
+        <input type="text" data-ng-model="exampleQuery" />
+    </div>
+</div>
+
+<div class="clearfix">
+    <div style="padding: 15px; height: 100px;" class="repeater col-md-4" data-ng-repeat="company in companies | filter: exampleQuery |offset: currentPage*companiesPerPage | 
+                limitTo: companiesPerPage track by $index">
+        {{company.Name}}        
+         <button style="float: right;" type="button" class="btn btn-default btn-xs" ng-click="DeleteCompany(company.Id)">delete</button>
+        <br />
+        {{company.Rating}}
+    </div>
+</div>
+<div>
+    <ul class="pagination pagination-sm">
+        <li data-ng-class="prevPageDisabled()">
+            <a data-ng-click="prevPage()">« Prev</a>
+        </li>
+        <li data-ng-repeat="n in range()" data-ng-class="{active: n == currentPage}" data-ng-click="setPage(n)">
+            <a>{{n+1}}</a>
+        </li>
+        <li data-ng-class="nextPageDisabled()">
+            <a data-ng-click="nextPage()">Next »</a>
+        </li>
+    </ul>
+</div>

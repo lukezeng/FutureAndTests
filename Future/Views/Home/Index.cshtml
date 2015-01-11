@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+    </section>
+}
+
+<!-- SlidesJS Required: Start Slides -->
+<!-- The container is used to define the width of the slideshow -->
+
+<div class="homeIndexSlideShowContainer" style="background-color: white; margin: auto;">
+    <div id="slides2">
+        <img src="/Images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+        <img src="/Images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+        <img src="/Images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+        <img src="/Images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+        <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
+    </div>
+</div>
+
+<!-- End SlidesJS Required: Start Slides -->
+
+
+<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+        enables a clean separation of concerns and that gives you full control over markup
+        for enjoyable, agile development. ASP.NET MVC includes many features that enable
+        fast, TDD-friendly development for creating sophisticated applications that use
+        the latest web standards.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Add NuGet packages and jump-start your coding</h5>
+        NuGet makes it easy to install and update free libraries and tools.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5>Find Web Hosting</h5>
+        You can easily find a web hosting example that offers the right mix of features
+        and price for your applications.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
+    </li>
+</ol>
+
+
+@section scripts{
+    <!-- SlidesJS Required: Link to jQuery -->
+    <!-- SlidesJS Required: Link to jquery.slides.js -->
+    <script src="/Scripts/jquery.slides.js"></script>
+    <!-- End SlidesJS Required -->
+
+    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+        $(function () {
+            $('#slides2').slidesjs({
+                width: 940,
+                height: 528,
+                navigation: false,
+                start: 4,
+                play: {
+                    auto: false
+                }
+            });
+        });
+  </script>
+    <!-- End SlidesJS Required -->
+
+}
